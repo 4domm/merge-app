@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Merge</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        #backButton {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            cursor: pointer;
+            position: fixed;
+            top: 20px;
+            left: 20px;
+        }
+        #backButton:hover {
+            background-color: #0056b3;
+        }
+        .container {
+            width: 80%;
+            max-width: 600px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #ccc;
+            margin: 20px 0;
+        }
+
+        h4 {
+            color: #333;
+            text-align: center;
+        }
+
+        b {
+            color: #000; /* Черный цвет текста */
+        }
+
+        p {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+<button id="backButton" onclick="goBack()">Назад</button>
+
+<script>
+    function goBack() {
+        window.history.back();
+    }
+</script>
+<div class="container">
+    <h1>Merge</h1>
+    <hr>
+    <h4>Подробная информация о встрече</h4>
+    <p><b>Описание: </b>${meeting.description}</p>
+    <p><b>Место: </b>${meeting.place}</p>
+    <p><b>Время начала: </b>${meeting.startTime}</p>
+    <p><b>Время окончания: </b>${meeting.endTime}</p>
+    <p><b>Участники встречи:</b></p>
+    <ul>
+        <#list meeting.members as member>
+            <li>${member}</li>
+        </#list>
+    </ul>
+    <hr>
+</div>
+</body>
+</html>
