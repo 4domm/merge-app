@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -24,12 +25,13 @@ public class SecurityConfig {
     protected SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
                 .authorizeHttpRequests((requests) -> requests
-                        .requestMatchers("/login", "/registration", "/error").permitAll().requestMatchers("/meeting/**", "/", "invitation/**").hasAnyAuthority("USER")
+                        .requestMatchers("/auth/**", "/error").permitAll().requestMatchers("/meeting/**", "/", "/invitation/**","/user/**").hasAnyAuthority("USER")
                         .anyRequest().authenticated()
                 )
                 .formLogin(form -> form
-                        .loginPage("/login")
-                        .failureUrl("/login")
+                        .loginPage("/auth/login")
+                        .defaultSuccessUrl("/meeting",true)
+                        .failureUrl("/auth/login")
                         .permitAll()
                 )
                 .logout(LogoutConfigurer::permitAll);

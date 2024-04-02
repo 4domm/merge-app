@@ -23,7 +23,7 @@ public class Meeting {
     String description;
     @ManyToOne
     User creator;
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
             name = "meeting_users",
             joinColumns = @JoinColumn(name = "meeting_id"),
@@ -33,4 +33,5 @@ public class Meeting {
     LocalDateTime startTime;
     String place;
     LocalDateTime endTime;
+    boolean notified;
 }

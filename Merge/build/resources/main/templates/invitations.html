@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Приглашения</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 20px;
+            transition: background-color 0.3s;
+            margin: 10px;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+        #backButton {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            cursor: pointer;
+            position: fixed;
+            top: 20px;
+            left: 20px;
+        }
+        #backButton:hover {
+            background-color: #0056b3;
+        }
+        .container {
+            width: 80%;
+            max-width: 600px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h1, h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: inline;
+        }
+
+        input[type="submit"] {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-left: 10px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 20px;
+            transition: background-color 0.3s;
+            margin-top: 20px;
+        }
+
+        a:hover {
+            background-color: #0056b3;
+        }
+
+        p {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <a href="/meeting" class="button">На главную</a>
+    <h2>Вас пригласили:</h2>
+    <th:block th:unless="${#lists.isEmpty(invitations)}">
+        <ul>
+            <th:block th:each="invitation : ${invitations}">
+                <li>
+                    <b>Встреча:</b> <span th:text="${invitation.meeting.description}"></span><br>
+                    <b>Отправитель:</b> <span th:text="${invitation.creator.email}"></span><br>
+                    <b>Статус:</b> <span th:text="${invitation.status}"></span><br>
+                    <form action="/invitation/accept/{id}" method="post" th:action="@{'/invitation/accept/' + ${invitation.id}}" >
+                        <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">
+                        <input type="submit" value="Принять">
+                    </form>
+
+                    <form action="/invitation/reject/{id}" method="post" th:action="@{'/invitation/reject/' + ${invitation.id}}">
+                        <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">
+                        <input type="submit" value="Отклонить">
+                    </form>
+                </li>
+            </th:block>
+        </ul>
+    </th:block>
+    <th:block th:if="${#lists.isEmpty(invitations)}">
+        <p>Приглашений нет</p>
+    </th:block>
+
+    <h2>Отправленные приглашения:</h2>
+    <th:block th:unless="${#lists.isEmpty(sentInvitations)}">
+        <ul>
+            <th:block th:each="invitation : ${sentInvitations}">
+                <li>
+                    <b>Встреча:</b> <span th:text="${invitation.meeting.description}"></span><br>
+                    <b>Получатель:</b> <span th:text="${invitation.invitedUser.email}"></span>
+                </li>
+            </th:block>
+        </ul>
+    </th:block>
+    <th:block th:if="${#lists.isEmpty(sentInvitations)}">
+        <p>Отправленных приглашений нет</p>
+    </th:block>
+    <a href="/invitation/create">Отправить приглашение</a>
+</div>
+</body>
+</html>

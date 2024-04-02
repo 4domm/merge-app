@@ -15,9 +15,13 @@ public interface MeetingService {
 
     void deleteById(UUID id);
 
-    Meeting changeMeetingInfo(Meeting newMeeting, UUID oldMeetingId);
+    Meeting changeMeetingInfo(Meeting newMeeting, UUID oldMeetingId,Principal principal);
+
+    void sendNotification(UUID id);
 
     Meeting updateMeeting(Meeting meeting);
+
     void deleteMeetingWithInvitations(UUID id);
+
     Meeting findById(UUID id);
 }

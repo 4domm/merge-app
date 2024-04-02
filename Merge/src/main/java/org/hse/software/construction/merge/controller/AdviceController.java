@@ -1,3 +1,4 @@
+
 package org.hse.software.construction.merge.controller;
 
 import org.springframework.http.HttpStatus;

@@ -7,10 +7,12 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequiredArgsConstructor
 @Slf4j
+@RequestMapping("/auth")
 public class AuthController {
     private final UserServiceImpl userService;
 
@@ -32,7 +34,7 @@ public class AuthController {
         }
         userService.createUser(user);
         log.info("user registered");
-        return "redirect:/login";
+        return "redirect:/auth/login";
     }
 
 }
