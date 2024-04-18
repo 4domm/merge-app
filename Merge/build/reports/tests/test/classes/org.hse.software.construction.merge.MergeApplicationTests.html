@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">0.419s</div>
+<div class="counter">0.426s</div>
 <p>duration</p>
 </div>
 </td>
@@ -79,7 +79,7 @@
 </thead>
 <tr>
 <td class="success">contextLoads()</td>
-<td class="success">0.419s</td>
+<td class="success">0.426s</td>
 <td class="success">passed</td>
 </tr>
 </table>
@@ -87,8 +87,8 @@
 <div id="tab1" class="tab">
 <h2>Standard output</h2>
 <span class="code">
-<pre>02:41:09.810 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [org.hse.software.construction.merge.MergeApplicationTests]: MergeApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-02:41:10.155 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration org.hse.software.construction.merge.MergeApplication for test class org.hse.software.construction.merge.MergeApplicationTests
+<pre>07:27:02.502 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [org.hse.software.construction.merge.MergeApplicationTests]: MergeApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+07:27:02.612 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration org.hse.software.construction.merge.MergeApplication for test class org.hse.software.construction.merge.MergeApplicationTests
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -98,22 +98,21 @@
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::                (v3.2.4)
 
-2024-04-17T02:41:10.788+03:00  INFO 15392 --- [Merge] [    Test worker] o.h.s.c.merge.MergeApplicationTests      : Starting MergeApplicationTests using Java 17.0.10 with PID 15392 (started by Георгий in C:\Users\Георгий\CourseApp\Merge)
-2024-04-17T02:41:10.790+03:00  INFO 15392 --- [Merge] [    Test worker] o.h.s.c.merge.MergeApplicationTests      : No active profile set, falling back to 1 default profile: &quot;default&quot;
-2024-04-17T02:41:11.413+03:00  INFO 15392 --- [Merge] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-04-17T02:41:11.467+03:00  INFO 15392 --- [Merge] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 47 ms. Found 3 JPA repository interfaces.
-2024-04-17T02:41:11.858+03:00  INFO 15392 --- [Merge] [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-04-17T02:41:11.918+03:00  INFO 15392 --- [Merge] [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
-2024-04-17T02:41:11.952+03:00  INFO 15392 --- [Merge] [    Test worker] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-04-17T02:41:12.193+03:00  INFO 15392 --- [Merge] [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-04-17T02:41:12.220+03:00  INFO 15392 --- [Merge] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-04-17T02:41:12.434+03:00  INFO 15392 --- [Merge] [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@5d2e6f62
-2024-04-17T02:41:12.436+03:00  INFO 15392 --- [Merge] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-04-17T02:41:13.473+03:00  INFO 15392 --- [Merge] [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-04-17T02:41:13.600+03:00  INFO 15392 --- [Merge] [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-04-17T02:41:14.012+03:00  WARN 15392 --- [Merge] [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-04-17T02:41:14.309+03:00  INFO 15392 --- [Merge] [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@3031d9e9, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1415f18d, org.springframework.security.web.context.SecurityContextHolderFilter@2040732f, org.springframework.security.web.header.HeaderWriterFilter@823f978, org.springframework.web.filter.CorsFilter@61c42e54, org.springframework.security.web.csrf.CsrfFilter@5f0a5848, org.springframework.security.web.authentication.logout.LogoutFilter@4830c979, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@61e4a072, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7894a250, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1bd53c5c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@533690d, org.springframework.security.web.access.ExceptionTranslationFilter@c0a8787, org.springframework.security.web.access.intercept.AuthorizationFilter@e0c03bd]
-2024-04-17T02:41:14.590+03:00  INFO 15392 --- [Merge] [    Test worker] o.h.s.c.merge.MergeApplicationTests      : Started MergeApplicationTests in 4.112 seconds (process running for 6.378)
+2024-04-18T07:27:02.985+03:00  INFO 8800 --- [Merge] [    Test worker] o.h.s.c.merge.MergeApplicationTests      : Starting MergeApplicationTests using Java 17.0.10 with PID 8800 (started by Георгий in C:\Users\Георгий\CourseApp\Merge)
+2024-04-18T07:27:02.985+03:00  INFO 8800 --- [Merge] [    Test worker] o.h.s.c.merge.MergeApplicationTests      : No active profile set, falling back to 1 default profile: &quot;default&quot;
+2024-04-18T07:27:03.630+03:00  INFO 8800 --- [Merge] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-04-18T07:27:03.691+03:00  INFO 8800 --- [Merge] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 49 ms. Found 3 JPA repository interfaces.
+2024-04-18T07:27:04.112+03:00  INFO 8800 --- [Merge] [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-04-18T07:27:04.175+03:00  INFO 8800 --- [Merge] [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-04-18T07:27:04.222+03:00  INFO 8800 --- [Merge] [    Test worker] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-04-18T07:27:04.487+03:00  INFO 8800 --- [Merge] [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-04-18T07:27:04.519+03:00  INFO 8800 --- [Merge] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-04-18T07:27:04.707+03:00  INFO 8800 --- [Merge] [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@3d71e10b
+2024-04-18T07:27:04.707+03:00  INFO 8800 --- [Merge] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-04-18T07:27:05.770+03:00  INFO 8800 --- [Merge] [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-04-18T07:27:05.926+03:00  INFO 8800 --- [Merge] [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-04-18T07:27:06.708+03:00  INFO 8800 --- [Merge] [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@1b4ade78, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@45fa7fb7, org.springframework.security.web.context.SecurityContextHolderFilter@2fb555e8, org.springframework.security.web.header.HeaderWriterFilter@1ff52a71, org.springframework.web.filter.CorsFilter@32eeef08, org.springframework.security.web.csrf.CsrfFilter@2c56e044, org.springframework.security.web.authentication.logout.LogoutFilter@55f54852, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@408bb173, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6c502018, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@58c93be3, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@bbf361a, org.springframework.security.web.access.ExceptionTranslationFilter@7ab8c972, org.springframework.security.web.access.intercept.AuthorizationFilter@b97f195]
+2024-04-18T07:27:07.067+03:00  INFO 8800 --- [Merge] [    Test worker] o.h.s.c.merge.MergeApplicationTests      : Started MergeApplicationTests in 4.314 seconds (process running for 5.389)
 </pre>
 </span>
 </div>
@@ -125,7 +124,7 @@
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 8.6</a> at 17 апр. 2024 г., 02:41:15</p>
+<a href="http://www.gradle.org">Gradle 8.6</a> at 18 апр. 2024 г., 07:27:07</p>
 </div>
 </div>
 </body>

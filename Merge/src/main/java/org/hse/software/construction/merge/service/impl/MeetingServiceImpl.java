@@ -45,7 +45,7 @@ public class MeetingServiceImpl implements MeetingService {
     @Transactional
     public void sendNotification(UUID id) {
         Meeting meeting = findById(id);
-        if (LocalDateTime.now().isBefore(meeting.getStartTime())) {
+        if (LocalDateTime.now().isBefore(meeting.getStartTime()) && !meeting.isNotified()) {
             log.info("sending noti");
             for (User user : meeting.getMembers()) {
                 LocalDateTime now = LocalDateTime.now();
