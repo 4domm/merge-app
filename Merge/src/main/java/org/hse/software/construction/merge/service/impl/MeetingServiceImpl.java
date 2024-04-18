@@ -8,7 +8,6 @@ import org.hse.software.construction.merge.repository.MeetingRepository;
 import org.hse.software.construction.merge.service.MeetingService;
 import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
-import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
 
 import java.security.Principal;
