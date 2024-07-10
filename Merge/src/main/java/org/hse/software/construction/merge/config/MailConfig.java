@@ -15,8 +15,8 @@ public class MailConfig {
         JavaMailSenderImpl mailSender = new JavaMailSenderImpl();
         mailSender.setHost("smtp.yandex.com");
         mailSender.setPort(465);
-        mailSender.setUsername("geosaugg@yandex.ru");
-        mailSender.setPassword("qolcxoflqzsxwsid");
+        mailSender.setUsername("haha");
+        mailSender.setPassword("hehe");
         Properties props = mailSender.getJavaMailProperties();
         props.put("mail.transport.protocol", "smtp");
         props.put("mail.smtp.auth", "true");
